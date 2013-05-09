@@ -8,7 +8,9 @@ Page {
         }
         ListView {
             id: listView
-            objectName: "listView"
+            dataModel: ArrayDataModel {
+                id: listModel
+            }
             listItemComponents: [
                 ListItemComponent {
                     type: "item"
@@ -34,6 +36,13 @@ Page {
                     }
                 }
             ]
+            onCreationCompleted: {
+                for (var a = 0; a < 20; a ++) {
+                    var item = new Object();
+                    item.type = "data";
+                    
+                }
+            }
         }
     }
     onCreationCompleted: {
